@@ -16,9 +16,10 @@ const questions = [
         message: "What is your project's description?"
     },
     {
-        type: 'input',
-        name: 'tableOfContents',
-        message: 'Do you want a Table of Contents?'
+        type: 'confirm',
+        name: 'confirmTable',
+        message: 'Do you want a Table of Contents?',
+        default: true
     },
     {
         type: 'input',
@@ -31,9 +32,10 @@ const questions = [
         message: 'Do you want a Usage Section?'
     },
     {
-        type: 'input',
+        type: 'list',
         name: 'license',
-        message: 'Do you want a License Section?'
+        message: 'Do you want a License Section?',
+        choices: ['JavaScript', 'HTML', 'CSS', 'ES6', 'jQuery', 'Bootstrap', 'Node']
     },
     {
         type: 'input',
