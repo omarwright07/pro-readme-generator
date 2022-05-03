@@ -1,6 +1,5 @@
-# The Best
+# The best
   ## Description 
-  This sentence
   
   ## Table of Content
   - [Installation](#installation)
@@ -9,23 +8,18 @@
   - [Contribute](#contribute)
   - [Tests](#tests)
   - [Questions](#questions)
-  
-
   ## Installation
-  n
-
+  
   ## Usage
-  m
-
+  
   ## License
-  n
-
+  JavaScript
   ## Contribute 
-  n
-
+  undefined
   ## Tests
-  n
-
+  
   ## Questions 
-  n
-  n
+  [Link to my GitHub Profile](https://github.com/)
+  
+  Email me for any additional questions at 
+  

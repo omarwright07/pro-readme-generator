@@ -8,7 +8,15 @@ const questions = [
     {
         type: 'input',
         name: 'title',
-        message: 'What is the title of your project?'
+        message: 'What is the title of your project?',
+        validate: input => {
+            if (input) {
+                return true;
+            } else {
+                console.log('Please enter a project title!');
+                return false;
+            }
+        }
     },
     {
         type: 'input',
@@ -35,26 +43,29 @@ const questions = [
         type: 'list',
         name: 'license',
         message: 'Do you want a License Section?',
-        choices: ['JavaScript', 'HTML', 'CSS', 'ES6', 'jQuery', 'Bootstrap', 'Node']
+        choices: [
+            'JavaScript',
+            'HTML',
+            'CSS',
+            'ES6',
+            'jQuery',
+            'Bootstrap',
+            'Node'
+        ]
     },
     {
         type: 'input',
-        name: 'contributing',
-        message: 'Do you want a Contributing Section?'
+        name: 'contribute',
+        message: 'Do you want in your Contribute Section?'
     },
     {
         type: 'input',
         name: 'tests',
-        message: 'Do you want a Test Section?'
+        message: 'Do you want in your Test Section?'
     },
     {
         type: 'input',
-        name: 'questions',
-        message: 'Do you want a Questions Section?'
-    },
-    {
-        type: 'input',
-        name: 'gitHub',
+        name: 'username',
         message: "What's your GitHub Username?"
     },
     {
@@ -65,7 +76,7 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) { 
+function writeToFile(fileName, data) {
     return new Promise((resolve, reject) => {
         fs.writeFile(fileName, data, error => {
             if (error) {
@@ -74,7 +85,7 @@ function writeToFile(fileName, data) {
             }
 
             resolve({
-                ok:true,
+                ok: true,
                 message: 'File created!'
             });
         });
