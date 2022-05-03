@@ -1,13 +1,99 @@
 // TODO: Include packages needed for this application
+const inquirer = require('inquirer');
+const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
-const questions = [];
+const questions = [
+    {
+        type: 'input',
+        name: 'title',
+        message: 'What is the title of your project?'
+    },
+    {
+        type: 'input',
+        name: 'description',
+        message: "What is your project's description?"
+    },
+    {
+        type: 'input',
+        name: 'tableOfContents',
+        message: 'Do you want a Table of Contents?'
+    },
+    {
+        type: 'input',
+        name: 'installation',
+        message: 'Do you want an Installation Section?'
+    },
+    {
+        type: 'input',
+        name: 'usage',
+        message: 'Do you want a Usage Section?'
+    },
+    {
+        type: 'input',
+        name: 'license',
+        message: 'Do you want a License Section?'
+    },
+    {
+        type: 'input',
+        name: 'contributing',
+        message: 'Do you want a Contributing Section?'
+    },
+    {
+        type: 'input',
+        name: 'tests',
+        message: 'Do you want a Test Section?'
+    },
+    {
+        type: 'input',
+        name: 'questions',
+        message: 'Do you want a Questions Section?'
+    },
+    {
+        type: 'input',
+        name: 'gitHub',
+        message: "What's your GitHub Username?"
+    },
+    {
+        type: 'input',
+        name: 'email',
+        message: "What's your email address?"
+    },
+];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) { 
+    return new Promise((resolve, reject) => {
+        fs.writeFile(fileName, data, error => {
+            if (error) {
+                reject(error);
+                return;
+            }
+
+            resolve({
+                ok:true,
+                message: 'File created!'
+            });
+        });
+    });
+};
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer.prompt(questions)
+        .then(answers => {
+            console.log(answers);
+            return generateMarkdown(answers);
+        })
+        .then(pageMarkdown => {
+            writeToFile('./dist/README.md', pageMarkdown);
+            console.log('README.md created!')
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+}
 
 // Function call to initialize app
 init();
