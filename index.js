@@ -80,8 +80,8 @@ const questions = [
             'GNU General Public License v2.0',
             'GNU General Public License v3.0',
             'GNU Lesser General Public License v3.0',
-            'Mozilla Public License 2.0',
             'MIT',
+            'Mozilla Public License 2.0',
             'The Unlicense'
         ]        
     },
