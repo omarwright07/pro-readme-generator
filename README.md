@@ -32,3 +32,6 @@ https://github.com/omarwright07/pro-readme-generator
 
 ## Recording Location
 https://drive.google.com/file/d/1PU_ctEaA1u5WD4WZgBj0-D3Kk8opOeyO/view
+
+## Example README Location
+https://github.com/omarwright07/pro-readme-generator/blob/main/EXAMPLE.md
