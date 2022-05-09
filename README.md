@@ -29,3 +29,6 @@ You can quickly and easily generate a README file by using a command-line applic
 
 ## GitHub Location
 https://github.com/omarwright07/pro-readme-generator
+
+## Recording Location
+https://drive.google.com/file/d/1PU_ctEaA1u5WD4WZgBj0-D3Kk8opOeyO/view
